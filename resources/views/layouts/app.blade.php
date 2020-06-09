@@ -11,6 +11,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,6 +23,8 @@
      <style>
           body {
                 background-image: url("img/tipos-de-flores.jpg");
+                margin-top: 0;
+                overflow-x: hidden;
             }
             .navbar {
                 background-color:#08B374;
@@ -36,6 +39,32 @@
                 background-color: #93F9C0;
                 border: #93F9C0; 
             }
+            #sidebar-wrapper {
+                min-height: 100vh;
+                width:250px;
+            }
+
+            #sidebar-wrapper .sidebar-heading {
+                padding: 0.875rem 1.25rem;
+                font-size: 1.2rem;
+            }
+
+            #sidebar-wrapper .list-group {
+                width: 15rem;
+            }
+
+            #page-content-wrapper {
+                min-width: 100vw;
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: 0;
+            }
+            #page-content-wrapper {
+                min-width: 0;
+                width: 100%;
+            }
+
         </style>
 </head>
 <body>
@@ -89,11 +118,11 @@
                     </ul>
                 </div>
             </div>
-        </nav>
-
+        </nav>   
+        
         <main class="py-4">
-            @yield('content')
-        </main>
+        @yield('content')
+     </main>
     </div>
 </body>
 </html>
