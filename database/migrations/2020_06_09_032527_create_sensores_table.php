@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMurosTable extends Migration
+class CreateSensoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateMurosTable extends Migration
      */
     public function up()
     {
-        Schema::create('muros', function (Blueprint $table) {
+        Schema::create('sensores', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->double('latitud');
-            $table->double('longitud');
-            $table->boolean('permanente');
-            $table->integer('riego_id');
-            $table->integer('sensor_id');
+            $table->integer('humedad');
+            $table->integer('temperatura');
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateMurosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('muros');
+        Schema::dropIfExists('sensores');
     }
 }

@@ -15,8 +15,9 @@ class CreateActivationsTable extends Migration
     {
         Schema::create('activations', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->boolean('enable');
-            $table->integer('tiempo');
+            $table->integer('duracion');
             $table->timestamps();
         });
     }

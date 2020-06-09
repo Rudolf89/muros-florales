@@ -16,10 +16,8 @@ class CreateRiegosTable extends Migration
         Schema::create('riegos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->boolean('activo');
-            $table->integer('duracion_riego');
+            $table->boolean('enable');
             $table->integer('activaciones_id');
-            $table->boolean('encendido');
             $table->timestamps();
         });
     }
